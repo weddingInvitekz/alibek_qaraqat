@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Үйлену тойына шақыру | Асқар & Әлия</title>
+  
+  <!-- Подключение шрифтов: Cinzel (строгий), Montserrat (основной) и Great Vibes (каллиграфический) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="script.js">
+</head>
+<body>
+
+  <!-- Фоновое аудио -->
+  <audio id="bg-music" src="Moldanazar_Mahabbatym.mp3" loop></audio>
+
+  <!-- ==================== ПЕРВЫЙ БЛОК (HERO) ==================== -->
+  <section class="hero">
+    <!-- Цветы сверху -->
+    <div class="flowers-top"></div>
+
+    <!-- Дата сверху -->
+    <div class="hero-top-content">
+      <div class="subtitle" style="font-size: 20px;">WEDDING DAY</div>
+      <div class="date" style="font-size: 44px;">14/03/2026</div>
+    </div>
+
+    <!-- Кнопка музыки и имена снизу -->
+    <div class="hero-bottom-content">
+      <button class="music-btn" id="music-btn" aria-label="Воспроизвести музыку">
+        <div class="music-btn-inner">
+          <svg class="music-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon id="play-icon" points="5 3 19 12 5 21 5 3"></polygon>
+            <path id="pause-icon" class="hidden" d="M6 4h4v16H6zM14 4h4v16h-4z"></path>
+          </svg>
+          <svg class="music-text-svg" viewBox="0 0 100 100">
+            <defs>
+              <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
+            </defs>
+            <text>
+              <textPath xlink:href="#circlePath">
+                МУЗЫКА ҚОСУ ҮШІН БАСЫҢЫЗ
+              </textPath>
+            </text>
+          </svg>
+        </div>
+      </button>
+
+      <div class="names">
+        <span style="font-family: '';">Alibek</span>
+        <span>Qaraqat</span>
+      </div>
+    </div>
+
+    <!-- Белый рваный край, соединяющий со 2-м блоком -->
+    <div class="torn-paper-top"></div>
+  </section>
+
+  <!-- ==================== ВТОРОЙ БЛОК (ПРИГЛАШЕНИЕ) ==================== -->
+  <section class="invitation-block">
+    <!-- Декоративный фоновый силуэт дерева -->
+    <div class="tree-bg"></div>
+
+    <div class="invitation-content">
+      <h2 class="invitation-title" style="font-size: 28px;">ҚҰРМЕТТІ<br>ҚОНАҚТАР!</h2>
+      
+      <p class="invitation-subtext" style="font-size: 18px;">СІЗ(ДЕР)ДІ<br>ҰЛЫМЫЗ БЕН КЕЛІНІМІЗ</p>
+      
+      <!-- Рукописный блок с именами -->
+      <div class="couple-names-calligraphy">
+        <div class="groom-name" style="font-family: 'MyCustomFont';" >Алибек</div>
+        <div class="ampersand">&</div>
+        <div class="bride-name"  style="font-family: 'MyCustomFont';">Қарақаттың</div>
+      </div>
+      
+      <p class="invitation-body" style="font-size: 18px;">
+        ҮЙЛЕНУ ТОЙЫНА<br>
+        АРНАЛҒАН САЛТАНАТТЫ<br>
+        АҚ ДАСТАРХАНЫМЫЗДЫҢ<br>
+        ҚАДІРЛІ ҚОНАҒЫ<br>
+        БОЛУҒА ШАҚЫРАМЫЗ!
+      </p>
+    </div>
+
+    <!-- Черный рваный край снизу 2-го блока для перехода в 3-й блок -->
+    
+  </section>
+
+  <section class="calendar-section">
+    <!-- Верхний рваный край -->
+    <div class="torn-divider torn-white-top"></div>
+  
+    <!-- Декоративные цветы по краям -->
+    <img class="flower-decor flower-top-right" src="IMG_7325-removebg-preview.png" alt="Flower Top Right">
+    <img class="flower-decor flower-bottom-left" src="IMG_7325-removebg-preview.png" alt="Flower Bottom Left">
+  
+    <div class="calendar-content">
+      <h3 class="event-title" style="font-size: 60px; font-family:'MyCustomFont'">Той салтанаты:</h3>
+      <div class="event-date" style="font-size: 22px;">21 ҚАРАША 2026 ЖЫЛ</div>
+  
+      <!-- Сетка календаря -->
+      <div class="calendar-grid">
+        <!-- Дни недели -->
+        <div class="day-name">ПН</div>
+        <div class="day-name">ВТ</div>
+        <div class="day-name">СР</div>
+        <div class="day-name">ЧТ</div>
+        <div class="day-name">ПТ</div>
+        <div class="day-name">СБ</div>
+        <div class="day-name">ВС</div>
+  
+        <!-- Пустые ячейки (1 ноября 2026 — воскресенье) -->
+        <div></div><div></div><div></div><div></div><div></div><div></div>
+        
+        <!-- Дни месяца -->
+        <div class="day-num">1</div>
+        <div class="day-num">2</div>
+        <div class="day-num">3</div>
+        <div class="day-num">4</div>
+        <div class="day-num">5</div>
+        <div class="day-num">6</div>
+        <div class="day-num">7</div>
+        <div class="day-num">8</div>
+        <div class="day-num">9</div>
+        <div class="day-num">10</div>
+        <div class="day-num">11</div>
+        <div class="day-num">12</div>
+        <div class="day-num">13</div>
+        <div class="day-num">14</div>
+        <div class="day-num">15</div>
+        <div class="day-num">16</div>
+        <div class="day-num">17</div>
+        <div class="day-num">18</div>
+        <div class="day-num">19</div>
+        <div class="day-num">20</div>
+        
+        <!-- Выделенная дата 21 ноября (Суббота) -->
+        <div class="day-num selected-day">
+          <span>21</span>
+          <svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+        </div>
+  
+        <div class="day-num">22</div>
+        <div class="day-num">23</div>
+        <div class="day-num">24</div>
+        <div class="day-num">25</div>
+        <div class="day-num">26</div>
+        <div class="day-num">27</div>
+        <div class="day-num">28</div>
+        <div class="day-num">29</div>
+        <div class="day-num">30</div>
+      </div>
+  
+      <!-- Время проведения -->
+      <div class="event-time">
+        <svg class="clock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+          <circle cx="12" cy="15" r="2"/>
+        </svg>
+        <span style="font-size: 22px;">САҒАТ 18:00 - ДЕ</span>
+      </div>
+    </div>
+  
+    <!-- Нижний рваный край -->
+    <div class="torn-divider torn-white-bottom"></div>
+  </section>
+
+
+  <section class="location-section">
+    
+   <!-- Верхний рваный край -->
+    
+    <div class="location-content">
+      <!-- Заголовок курсивом -->
+      <h3 class="location-title" style="font-family:'MyCustomFont'; font-size:60px">Мекенжайымыз:</h3>
+  
+      <!-- Изображение зала/ресторана -->
+      <div class="restaurant-image-wrapper">
+        <img src="IMG_7331.JPG" alt="Банкетный зал" class="restaurant-image">
+      </div>
+  
+      <!-- Текст адреса -->
+      <div class="location-address">
+        <p class="city-street">ТАРАЗ ҚАЛАСЫ,<br>ЖАМБЫЛ ДАҢҒЫЛЫ 18Б</p>
+        <h2 class="restaurant-name">«Sapphire»</h2>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="map-hosts-section">
+    <!-- Подпись ресторана -->
+    <p class="venue-type">МЕЙРАМХАНАСЫ</p>
+  
+    <!-- Кнопка карты (подставьте нужную ссылку на 2GIS или Google Maps) -->
+    <div class="map-button-wrapper">
+      <a href="https://2gis.kz" target="_blank" class="map-button">
+        ҚАРТАНЫ АШУ
+      </a>
+    </div>
+  
+    <!-- Блок хозяев торжества -->
+    <div class="hosts-block">
+      <h3 class="hosts-title" style="font-family:'MyCustomFont'; font-size:60px">Той иелері:</h3>
+      <!-- Укажите имена хозяев торжества -->
+      <p class="hosts-names">АЛЛАМБЕРГЕН - САЛТАНАТ</p>
+    </div>
+
+    <div class="torn-divider torn-white-bottom"></div>
+  </section>
+
+
+
+  <section class="countdown-section">
+    <div class="torn-divider torn-white-top"></div>
+    <!-- Темное затемнение поверх картинки -->
+    <div class="countdown-overlay"></div>
+  
+    <div class="countdown-content">
+      <h3 class="countdown-title">Тойға дейін:</h3>
+  
+      <!-- Блок таймера -->
+      <div class="timer-container">
+        <div class="timer-item">
+          <div class="circle-box">
+            <span id="days">00</span>
+          </div>
+          <span class="label">КҮН</span>
+        </div>
+  
+        <span class="colon">:</span>
+  
+        <div class="timer-item">
+          <div class="circle-box">
+            <span id="hours">00</span>
+          </div>
+          <span class="label">САҒАТ</span>
+        </div>
+  
+        <span class="colon">:</span>
+  
+        <div class="timer-item">
+          <div class="circle-box">
+            <span id="minutes">00</span>
+          </div>
+          <span class="label">МИНУТ</span>
+        </div>
+  
+        <span class="colon">:</span>
+  
+        <div class="timer-item">
+          <div class="circle-box">
+            <span id="seconds">00</span>
+          </div>
+          <span class="label">СЕКУНД</span>
+        </div>
+      </div>
+  
+      <!-- Завершающая надпись -->
+      <h3 class="closing-title">Сіздерді күтеміз!</h3>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

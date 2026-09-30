@@ -1,0 +1,731 @@
+
+
+@font-face {
+    font-family: 'MyCustomFont'; /* Название шрифта, которое вы будете использовать в CSS */
+    src: url('KZ_ceremonious-two\ \(9\).ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Margarita'; /* Название шрифта, которое вы будете использовать в CSS */
+    src: url('KZ_Margarita_script.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+
+  }
+
+
+  @font-face {
+    font-family: 'Champ'; /* Название шрифта, которое вы будете использовать в CSS */
+    src: url('KZPF_Champion_Script_Pro.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+
+
+/* --- СБРОС И ОСНОВНЫЕ СТИЛИ --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0d0d0d;
+    color: #ffffff;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* --- 1. ПЕРВЫЙ БЛОК (HERO) --- */
+  .hero {
+    position: relative;
+    width: 100%;
+    min-height: 90vh;
+    background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.6) 100%), 
+                url('IMG_7318.JPG') center center / cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 80px 24px 90px;
+  }
+  
+  .flowers-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    background: url('flowers.png') top center / contain no-repeat;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.9;
+  }
+  
+  .hero-top-content {
+    margin-top: 240px;
+    text-align: center;
+    z-index: 1;
+  }
+  
+  .subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.35em;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 8px;
+  }
+  
+  .date {
+    font-family: 'Cinzel', serif;
+    font-size: 3.5rem;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+  }
+  
+  .hero-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    z-index: 1;
+    padding-bottom: 30px;
+  }
+  
+  /* Кнопка музыки */
+  .music-btn {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: none;
+    background: none;
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+  }
+  
+  .music-btn-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .music-icon {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    z-index: 2;
+    stroke: white;
+    fill: white;
+  }
+  
+  .music-text-svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    animation: rotateText 15s linear infinite;
+    transform-origin: center;
+  }
+  
+  .music-text-svg text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8.5px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    fill: rgba(255, 255, 255, 0.75);
+    text-transform: uppercase;
+  }
+  
+  @keyframes rotateText {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .names {
+    font-family: 'Cinzel', serif;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    max-width: 60%;
+  }
+  
+  .names span {
+    font-size: 3rem;
+    letter-spacing: 0.12em;
+    font-weight: 500;
+    line-height: 1.1;
+    text-transform: uppercase;
+  }
+  
+  /* Верхняя белая рваная бумага */
+  /* --- РЕАЛИСТИЧНЫЙ РВАНЫЙ КРАЙ СВЕРХУ (Белый) --- */
+.torn-paper-top {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    /* Естественный рваный волокнистый край бумаги */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0 C150,90 350,-40 500,65 C650,110 900,-20 1200,45 L1200,120 L0,120 Z' fill='%23ffffff'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: 3;
+  }
+  
+  /* --- РЕАЛИСТИЧНЫЙ РВАНЫЙ КРАЙ СНИЗУ (Черный) --- */
+  .torn-paper-bottom-black {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    /* Естественный рваный край перехода в черный цвет */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0 C150,90 350,-40 500,65 C650,110 900,-20 1200,45 L1200,120 L0,120 Z' fill='%230d0d0d'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: 3;
+  }
+  
+  /* --- 2. ВТОРОЙ БЛОК (ПРИГЛАШЕНИЕ) --- */
+  .invitation-block {
+    position: relative;
+    width: 100%;
+    background-color: #ffffff;
+    color: #2b2b2b;
+    padding: 60px 24px 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+    overflow: hidden;
+  }
+  
+  /* Фоновый полупрозрачный узор Дерева Жизни */
+  .tree-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    height: 320px;
+    /* SVG вектор дерева */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' opacity='0.08'%3E%3Cpath fill='%23000000' d='M50 5 C30 5 15 20 15 40 C15 52 22 62 32 68 C30 75 25 82 15 88 L15 90 C30 90 42 80 47 72 L47 95 L53 95 L53 72 C58 80 70 90 85 90 L85 88 C75 82 70 75 68 68 C78 62 85 52 85 40 C85 20 70 5 50 5 Z M50 12 C62 12 72 20 74 32 C68 30 60 32 54 38 C50 32 42 28 34 30 C32 20 40 12 50 12 Z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none;
+  }
+  
+  .invitation-content {
+    position: relative;
+    z-index: 2;
+    max-width: 420px;
+    width: 100%;
+  }
+  
+  .invitation-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.85rem;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.3;
+    margin-bottom: 24px;
+  }
+  
+  .invitation-subtext {
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.18em;
+    color: #555555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  /* Каллиграфический блок */
+  .couple-names-calligraphy {
+    margin: 15px 0 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .groom-name, .bride-name {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4.2rem;
+    color: #111111;
+    line-height: 1;
+    font-weight: 400;
+  }
+  
+  .ampersand {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.8rem;
+    color: #333333;
+    margin: -10px 0;
+  }
+  
+  .invitation-body {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    letter-spacing: 0.14em;
+    font-weight: 500;
+    color: #222222;
+    line-height: 1.8;
+  }
+  
+  /* Нижняя черная рваная бумага (переход в следующий блок) */
+ 
+  
+  /* --- АДАПТИВ ДЛЯ МОБИЛЬНЫХ ЭКРАНОВ --- */
+  @media (max-width: 480px) {
+    .hero {
+      padding: 70px 18px 70px;
+    }
+  
+    .subtitle {
+      font-size: 0.95rem;
+    }
+  
+    .date {
+      font-size: 2.7rem;
+    }
+  
+    .names span {
+      font-size: 2.2rem;
+    }
+  
+    .music-btn {
+      width: 75px;
+      height: 75px;
+    }
+  
+    .invitation-block {
+      padding: 50px 18px 75px;
+    }
+  
+    .invitation-title {
+      font-size: 1.55rem;
+    }
+  
+    .invitation-subtext {
+      font-size: 0.85rem;
+    }
+  
+    .groom-name, .bride-name {
+      font-size: 3.6rem;
+    }
+  
+    .ampersand {
+      font-size: 2.4rem;
+    }
+  
+    .invitation-body {
+      font-size: 0.88rem;
+      letter-spacing: 0.1em;
+    }
+  }
+
+  .calendar-section {
+    position: relative;
+    background-color: #0d0d0d;
+    color: #ffffff;
+    padding: 60px 20px;
+    text-align: center;
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+  }
+  
+  .event-title {
+    font-style: italic;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 5px;
+  }
+  
+  .event-date {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+  
+  /* Сетка календаря */
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px 5px;
+    max-width: 320px;
+    margin: 0 auto 30px auto;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .day-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    opacity: 0.9;
+    letter-spacing: 1px;
+  }
+  
+  .day-num {
+    font-size: 1.2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+  }
+  
+  /* Сердечко вокруг 21 числа */
+  .selected-day {
+    font-weight: bold;
+  }
+  
+  .selected-day .heart-icon {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    stroke: #ffffff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  
+  /* Блок со временем */
+  .event-time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+  }
+  
+  .clock-icon {
+    width: 32px;
+    height: 32px;
+    stroke: #ffffff;
+  }
+
+  /* Базовый стиль для декоративных цветов */
+.flower-decor {
+    position: absolute;
+    width: 120px; /* Размер цветка можно отрегулировать при необходимости */
+    height: 180px;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.5;
+  }
+  
+  /* Верхний правый цветок */
+  .flower-top-right {
+    top: -5px;
+    right: 0px;
+  }
+  
+  /* Нижний левый цветок */
+  .flower-bottom-left {
+    bottom: -9px;
+    left: -15px;
+  }
+
+
+  /* ############ */
+/* Основной контейнер 4-го блока */
+.location-section {
+    position: relative;
+    background-color: #ffffff;
+    color: #0d0d0d;
+    padding: 40px 0px 30px 0px;
+    text-align: center;
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+  }
+  
+  /* Заголовок "Мекенжайымыз:" */
+  .location-title {
+    font-style: italic;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+  
+  /* Обертка картинки с мягким растворением краев */
+  .restaurant-image-wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 0px auto;
+    position: relative;
+    
+    /* Маска сглаживания: верх и низ плавно уходят в прозрачность */
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 35%, black 65%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 35%, black 65%, transparent 100%);
+  }
+  
+  .restaurant-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    /* Градация серого + режимы наложения для бесшовного слияния с белым фоном */
+    filter: grayscale(100%) contrast(105%) brightness(98%);
+    mix-blend-mode: multiply; /* Картинка естественным образом вплетается в белый фон */
+  }
+  
+  /* Блок адреса */
+  .location-address {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .city-street {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1.5;
+    color: #2b2b2b;
+    margin: 0;
+  }
+  
+  /* Название ресторана */
+  .restaurant-name {
+    font-style: italic;
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-top: 5px;
+  }
+
+
+  /* ############### */
+
+  /* Основной контейнер 5-го блока */
+.map-hosts-section {
+    background-color: #ffffff;
+    color: #0d0d0d;
+    padding: 10px 20px 50px 20px;
+    text-align: center;
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+  }
+  
+  /* Надпись "МЕЙРАМХАНАСЫ" */
+  .venue-type {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #333333;
+    margin-top: 0;
+    margin-bottom: 25px;
+  }
+  
+  /* Кнопка "ҚАРТАНЫ АШУ" */
+  .map-button-wrapper {
+    margin-bottom: 40px;
+  }
+  
+  .map-button {
+    display: inline-block;
+    background-color: #262626; /* Темно-серый/черный цвет кнопки */
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding: 14px 36px;
+    border-radius: 30px; /* Закругленная овальная кнопка */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .map-button:hover {
+    background-color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  }
+  
+  .map-button:active {
+    transform: translateY(0);
+  }
+  
+  /* Блок "Той иелері:" */
+  .hosts-block {
+    margin-top: 20px;
+  }
+  
+  .hosts-title {
+    font-style: italic;
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+  }
+  
+  .hosts-names {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    margin: 0;
+  }
+
+  /* ############### */
+
+
+  /* Контейнер блока с фоновым фото */
+.countdown-section {
+    position: relative;
+    width: 100%;
+    padding: 80px 15px;
+    background: url('IMG_7319.JPG') center center / cover no-repeat;
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    overflow: hidden;
+  }
+  
+  /* Полупрозрачный темный слой для читаемости текста */
+  .countdown-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55); /* Регулируйте прозрачность по вкусу */
+    z-index: 1;
+  }
+  
+  .countdown-content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Заголовки "Тойға дейін:" и "Сіздерді күтеміз!" */
+  .countdown-title,
+  .closing-title {
+    font-style: italic;
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  }
+  
+  .closing-title {
+    margin-top: 40px;
+    margin-bottom: 0;
+  }
+  
+  /* Таймер */
+  .timer-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .timer-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Круглые рамочки вокруг цифр */
+  .circle-box {
+    width: 60px;
+    height: 60px;
+    border: 1.5px solid rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    backdrop-filter: blur(2px);
+    background: rgba(255, 255, 255, 0.05);
+  }
+  
+  .colon {
+    font-size: 1.4rem;
+    line-height: 60px;
+    opacity: 0.8;
+  }
+  
+  .label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 8px;
+    opacity: 0.85;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  /* ОБЩИЙ СТИЛЬ ДЛЯ РВАНЫХ КРАЕВ */
+.torn-divider {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    pointer-events: none;
+    z-index: 5;
+    border-color:none;
+    border: none;
+  }
+  
+  /* 1. Белый рваный край (накладывается СВЕРХУ на черный блок) */
+  .torn-white-top {
+    top: -1px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L1200,0 L1200,40 C1050,95 850,10 700,75 C550,120 300,15 150,85 C70,120 0,60 0,60 Z' fill='%23ffffff'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-color: white;
+  }
+  
+  /* 2. Белый рваный край (накладывается СНИЗУ черного блока) */
+  .torn-white-bottom {
+    bottom: -1px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,120 L1200,120 L1200,80 C1050,25 850,110 700,45 C550,0 300,105 150,35 C70,0 0,60 0,60 Z' fill='%23ffffff'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-color: white;
+  }
+  
+  /* 3. Черный рваный край (накладывается СВЕРХУ на белый блок перед фото-таймером) */
+  .torn-black-top {
+    top: -1px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L1200,0 L1200,40 C1050,95 850,10 700,75 C550,120 300,15 150,85 C70,120 0,60 0,60 Z' fill='%230d0d0d'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-color: black;
+  }
