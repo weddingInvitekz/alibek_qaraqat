@@ -46,3 +46,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setInterval(updateCountdown, 1000);
   updateCountdown();
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const audio = document.getElementById('bg-music');
+  const playIcon = document.getElementById('play-icon');
+  const pauseIcon = document.getElementById('pause-icon');
+
+  // Функция для обновления иконки кнопки
+  function updateMusicUI(isPlaying) {
+    if (playIcon && pauseIcon) {
+      if (isPlaying) {
+        playIcon.classList.add('hidden');
+        pauseIcon.classList.remove('hidden');
+      } else {
+        playIcon.classList.remove('hidden');
+        pauseIcon.classList.add('hidden');
+      }
+    }
+  }
+
+  // Попытка запустить аудио сразу при загрузке
+  const startAudio = () => {
+    audio.play().then(() => {
+      updateMusicUI(true);
+      removeInteractionListeners();
+    }).catch(() => {
+      // Браузер заблокировал autoplay — ждем взаимодействия пользователя
+      updateMusicUI(false);
+    });
+  };
+
+  // Слушатели первого взаимодействия
+  const onUserInteraction = () => {
+    audio.play().then(() => {
+      updateMusicUI(true);
+      removeInteractionListeners();
+    }).catch(err => console.log('Autoplay issue:', err));
+  };
+
+  function removeInteractionListeners() {
+    window.removeEventListener('click', onUserInteraction);
+    window.removeEventListener('touchstart', onUserInteraction);
+    window.removeEventListener('scroll', onUserInteraction);
+  }
+
+  // Навешиваем слушатели на любое касание/клик/скролл
+  window.addEventListener('click', onUserInteraction, { once: true });
+  window.addEventListener('touchstart', onUserInteraction, { once: true });
+  window.addEventListener('scroll', onUserInteraction, { once: true });
+
+  // Пробуем запустить прямо сейчас
+  startAudio();
+});
